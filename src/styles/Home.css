@@ -1,0 +1,122 @@
+.croquis {
+  width: 100%;
+  max-height: 80vh;
+}
+
+.fVillanueva{
+  display: flex;
+  flex-direction: column;
+}
+
+.fundacionVillanuevaImgHome {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fundacionVillanuevaTitleHome {
+  font-size: 4rem; /* Ajustado para pantallas pequeñas */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.fundacionVillanuevaDescriptionHome p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: justify;
+}
+
+.crvGrid {
+  display: flex;
+  flex-direction: column; /* Ajustado para pantallas pequeñas */
+}
+
+.crvImgHome {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.crvTitleHome {
+  font-size: 4rem; /* Ajustado para pantallas pequeñas */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.crvDescriptionHome p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: justify;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column; /* Ajustado para pantallas pequeñas */
+  align-items: center;
+}
+
+.box1, .box2, .box3 {
+  width: 90%; /* Ajustado para pantallas pequeñas */
+  background-color: #a3a3a3;
+  border-radius: 5%;
+  margin-bottom: 20px;
+  height: auto; /* Ajustado para que las imágenes sean responsivas */
+}
+
+.box1 img, .box2 img, .box3 img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .fundacionVillanuevaTitleHome {
+    font-size: 8rem; /* Ajustado para pantallas grandes */
+  }
+
+  .crvTitleHome {
+    font-size: 8rem; /* Ajustado para pantallas grandes */
+  }
+
+
+
+  .fundacionVillanuevaImgHome{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .fundacionVillanuevaTitleHome,
+  .fundacionVillanuevaDescriptionHome {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .crvImgHome {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .crvTitleHome,
+  .crvDescriptionHome {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .boxes {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .box1, .box2, .box3 {
+    width: 30%;
+    margin-bottom: 0;
+  }
+}

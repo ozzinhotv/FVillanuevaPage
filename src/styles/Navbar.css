@@ -1,0 +1,23 @@
+.navbar {
+    width: 100%;
+  }
+  
+  .navbar-brand {
+    margin-right: auto; 
+    padding: 0 60px; 
+  }
+
+  .navbar-nav {
+    margin-right: 60px;
+  }
+
+  .navbar-brand-left {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  
+  .logo {
+    width: 200px;
+    cursor: pointer;
+  }
+  
