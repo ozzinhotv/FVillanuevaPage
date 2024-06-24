@@ -4,7 +4,7 @@ import "../../src/styles/Navbar.css";
 import { useTranslation } from "react-i18next";
 
 const languages = [
-  { code: "es", lang: "Spanish" },
+  { code: "es", lang: "Español" },
   { code: "en", lang: "English" },
 ];
 

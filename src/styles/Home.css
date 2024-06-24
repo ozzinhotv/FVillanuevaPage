@@ -1,11 +1,14 @@
-.croquis {
-  width: 100%;
-  max-height: 80vh;
+.parallax{
+  height: 650px;
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.fVillanueva{
-  display: flex;
-  flex-direction: column;
+
+.fundacionVillanuevaInfoHome {
+  padding: 20px;
 }
 
 .fundacionVillanuevaImgHome {
@@ -14,12 +17,12 @@
 }
 
 .fundacionVillanuevaTitleHome {
-  font-size: 4rem; /* Ajustado para pantallas pequeñas */
+  font-size: 4rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
+  text-align: left;
 }
-
 
 .fundacionVillanuevaDescriptionHome p {
   font-size: 1.2rem;
@@ -28,9 +31,14 @@
   text-align: justify;
 }
 
-.crvGrid {
-  display: flex;
-  flex-direction: column; /* Ajustado para pantallas pequeñas */
+.responsive-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.crvInfoHome {
+  padding: 20px;
 }
 
 .crvImgHome {
@@ -39,10 +47,11 @@
 }
 
 .crvTitleHome {
-  font-size: 4rem; /* Ajustado para pantallas pequeñas */
+  font-size: 4rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .crvDescriptionHome p {
@@ -52,62 +61,90 @@
   text-align: justify;
 }
 
-.grid {
-  display: grid;
-  gap: 30px;
-}
-
 .boxes {
   display: flex;
-  flex-direction: column; /* Ajustado para pantallas pequeñas */
+  flex-direction: column;
   align-items: center;
 }
 
-.box1, .box2, .box3 {
-  width: 90%; /* Ajustado para pantallas pequeñas */
+.box {
+  width: 90%;
   background-color: #a3a3a3;
   border-radius: 5%;
   margin-bottom: 20px;
-  height: auto; /* Ajustado para que las imágenes sean responsivas */
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.box1 img, .box2 img, .box3 img {
+.box img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 420px;
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
+
+.box p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.box:hover img {
+  transform: scale(1.1);
 }
 
 @media (min-width: 768px) {
-  .fundacionVillanuevaTitleHome {
-    font-size: 8rem; /* Ajustado para pantallas grandes */
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .crvTitleHome {
-    font-size: 8rem; /* Ajustado para pantallas grandes */
+  .crvDescriptionHome:nth-of-type(1) {
+    order: 2;
+    padding-left: 20px;
   }
 
-
-
-  .fundacionVillanuevaImgHome{
-    grid-column: 1;
-    grid-row: 1;
+  .crvImgHome:nth-of-type(1) {
+    order: 1;
+    text-align: center;
   }
 
-  .fundacionVillanuevaTitleHome,
+  .crvDescriptionHome:nth-of-type(2) {
+    order: 3;
+    padding-right: 20px;
+  }
+
+  .crvImgHome:nth-of-type(2) {
+    order: 4;
+    text-align: center;
+  }
+
   .fundacionVillanuevaDescriptionHome {
-    grid-column: 2;
-    grid-row: 1;
+    order: 1;
+    padding-right: 20px;
   }
 
-  .crvImgHome {
-    grid-column: 2;
-    grid-row: 1;
+  .fundacionVillanuevaImgHome {
+    order: 2;
+    text-align: center;
   }
 
-  .crvTitleHome,
-  .crvDescriptionHome {
-    grid-column: 1;
-    grid-row: 1;
+  .responsive-img {
+    width: 65%;
+    height: auto;
   }
 
   .boxes {
@@ -115,8 +152,74 @@
     justify-content: space-between;
   }
 
-  .box1, .box2, .box3 {
+  .box {
     width: 30%;
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .fundacionVillanuevaTitleHome,
+  .crvTitleHome {
+    font-size: 2.5rem;
+  }
+
+  .fundacionVillanuevaDescriptionHome p,
+  .crvDescriptionHome p {
+    font-size: 0.85rem;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .crvDescriptionHome:nth-of-type(1) {
+    order: 1;
+    width: 90%;
+  }
+
+  .crvImgHome:nth-of-type(1) {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .crvDescriptionHome:nth-of-type(2) {
+    order: 3;
+    width: 90%;
+    text-align: center;
+  }
+
+  .crvImgHome:nth-of-type(2) {
+    order: 4;
+    width: 100%;
+    text-align: center;
+  }
+
+  .fundacionVillanuevaImgHome,
+  .crvImgHome {
+    width: 100%;
+    text-align: center;
+  }
+
+  .responsive-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .fundacionVillanuevaDescriptionHome,
+  .crvDescriptionHome {
+    width: 90%;
+    text-align: center;
+  }
+
+  .boxes {
+    flex-direction: column;
+  }
+
+  .box {
+    width: 100%;
   }
 }
