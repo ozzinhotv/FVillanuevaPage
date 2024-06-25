@@ -1,6 +1,7 @@
+// main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createBrowserRouter, RouterProvider, Link} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './views/Home';
 import Vida from './views/Vida.jsx';
 import Obra from './views/Obra.jsx';

@@ -29,12 +29,14 @@ function Navbar() {
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
+  const currentPath = window.location.pathname;
+
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container">
         <div className="navbar-brand navbar-brand-left">
           <a className="nav-link" href="/">
-            <img className="logo" alt="" src={logo_Navbar} />
+            <img className="logo" alt="Logo" src={logo_Navbar} />
           </a>
         </div>
         <button
@@ -55,22 +57,22 @@ function Navbar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="/vida">
+              <a className={`nav-link ${currentPath === "/vida" ? "selected" : ""}`} href="/vida">
                 {t("vida")}
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/obra">
+              <a className={`nav-link ${currentPath === "/obra" ? "selected" : ""}`} href="/obra">
                 {t("obra")}
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/escritos">
+              <a className={`nav-link ${currentPath === "/escritos" ? "selected" : ""}`} href="/escritos">
                 {t("escritos")}
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/fundacion">
+              <a className={`nav-link ${currentPath === "/fundacion" ? "selected" : ""}`} href="/fundacion">
                 {t("fundacion")}
               </a>
             </li>
