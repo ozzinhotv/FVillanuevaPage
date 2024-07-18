@@ -1,0 +1,18 @@
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 80%; 
+    max-width: 800px; 
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    
+  }
+  
+  .map {
+    height: 100%;
+    width: 100%;
+  }
+  

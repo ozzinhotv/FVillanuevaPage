@@ -11,6 +11,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 import "./i18n.js";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const router = createBrowserRouter([
   {

@@ -1,0 +1,58 @@
+.container {
+    max-width: 1000px;
+}
+
+.search-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-control, .form-select {
+    width: 100%;
+}
+
+.escritos-list {
+    margin-top: 20px;
+}
+
+.row > .col-md-6, .row > .col-12 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: 0.875rem;
+}
+
+.card-text {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.card-link {
+    margin-top: auto;
+}

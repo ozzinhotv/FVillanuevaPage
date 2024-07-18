@@ -1,8 +1,14 @@
-import React from "react";
+import React from 'react';
+import Gallery from '../../src/components/Gallery';
 
-function Obra() {
-    return (
-        <p>Hello World</p>
-    )
-}
-export default Obra
+const Obras = () => {
+  return (
+    <div className="Obras">
+        <div className='container mt-4 mb-4'>
+            <Gallery />
+        </div>  
+    </div>
+  );
+};
+
+export default Obras;

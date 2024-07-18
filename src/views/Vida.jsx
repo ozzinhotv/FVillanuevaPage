@@ -23,7 +23,7 @@ function Vida() {
     return (
         <div className="vida-container">
             <header>
-                <h1 className="fs-1 fw-bolder">Nombre del Arquitecto</h1>
+                <h1 className="fs-1 fw-bolder">Carlos Raul Villanueva</h1>
                 <img src={vidaImg} alt="Fotografía del Arquitecto" />
                 <p>Breve introducción sobre la vida y contribuciones del arquitecto.</p>
             </header>

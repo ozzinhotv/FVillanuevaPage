@@ -89,7 +89,7 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded={dropdownOpen ? "true" : "false"}
               >
-                🌐
+                <i className="fa-solid fa-globe"></i>
               </a>
               <div
                 className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}
