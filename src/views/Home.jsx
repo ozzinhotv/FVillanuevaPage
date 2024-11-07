@@ -27,7 +27,7 @@ function Home() {
                         <br />
                         <span>Carlos Raul Villanueva en Caoma, Caracas 1960.</span>
                         <br />
-                        <span>Foto: Alfredo Brandler.</span>
+                        <span>Foto por: Alfredo Brandler.</span>
                     </p>
                 </div>
                 <div className="col-12 col-md-6 fundacionVillanuevaDescriptionHome">
