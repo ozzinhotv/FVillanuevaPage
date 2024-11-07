@@ -19,9 +19,7 @@ function Home() {
       <div className="container">  
         <div className="homeContainer">
           <div className="fundacionVillanuevaInfoHome m-4">
-            <div className="fundacionVillanuevaTitleHome mb-4">
-                <h1 className="fs-1 fw-bolder">{t("name")}</h1>
-              </div>
+                <h1>{t("name")}</h1>
             <div className="row">
                 <div className="col-12 col-md-6 fundacionVillanuevaImgHome">
                     <p>
@@ -42,7 +40,7 @@ function Home() {
           <hr className="divider"></hr>
           <div className="crvInfoHome m-4">
             <div className="crvTitleHome mb-4">
-                <h1 className="fs-1 fw-bolder">Carlos Raúl Villanueva</h1>
+                <h1>Carlos Raúl Villanueva</h1>
               </div>
             <div className="row">
                 <div className="col-12 col-md-6 crvDescriptionHome lead m">
@@ -72,7 +70,7 @@ function Home() {
           <hr className="divider"></hr>
           <div className="moreInfo m-5">
             <div className="moreInfotitle mb-4">
-                <h1 className="fs-1 fw-bolder">{t("more")}</h1>
+                <h1>{t("more")}</h1>
               </div>
             <div className="boxes">
               <div className="box box1">

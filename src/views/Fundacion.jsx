@@ -1,11 +1,14 @@
 import React from 'react';
 import MapComponent from '../components/MapComponent';
 import '../../src/styles/Fundacion.css';
+import { useTranslation } from "react-i18next";
+
 
 function Fundacion() {
+  const { t } = useTranslation(['homePage']);
   return (
     <div className="fundacion">
-      <h1>Fundación Villanueva</h1>
+      <h1>{t("name")}</h1>
       <div className="contact-info">
         <h2>Contactos</h2>
         <p>Email: <a href="mailto:fcmvillanueva@gmail.com">fcmvillanueva@gmail.com</a></p>

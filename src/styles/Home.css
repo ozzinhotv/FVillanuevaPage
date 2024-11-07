@@ -6,10 +6,21 @@
   background-attachment: fixed;
 }
 
+h1{
+  font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.1em;
+}
+
 
 .fundacionVillanuevaInfoHome {
   padding: 20px;
 }
+
+
 
 .fundacionVillanuevaImgHome {
   margin-bottom: 20px;
