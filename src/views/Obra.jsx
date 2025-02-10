@@ -28,7 +28,6 @@ const Obras = () => {
       <div className="container mt-4 mb-4">
         <h1>Obras</h1>
 
-        {/* Botón Dropdown para seleccionar el año */}
         <div className="dropdown mb-3">
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownYear" data-bs-toggle="dropdown" aria-expanded="false">
             Filtrar por Año
