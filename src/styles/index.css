@@ -1,11 +1,13 @@
-
 h1 {
-  font-family: monospace;
-  font-weight: bolder;
-  font-size: large;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 4.0rem !important;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
   --s: 0.1em;   
   --c: red; 
-  
   color: #0000;
   padding-bottom: var(--s);
   background: 
@@ -17,14 +19,23 @@ h1 {
 }
 h1:hover {
   --_p: 100%;
+  color: red
 }
-
-
-
 p {
   font-family: monospace;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: justify;
 }
 
 a {
-  font-family: monospace;
+  font-family: "Montserrat";
+  color: red;
+}
+
+.divider {
+  border: 2px solid red; 
+  opacity: 1;
+  margin: 40px 0;
 }

@@ -3,7 +3,7 @@ Webpage of the architect Carlos Raul Villanueva and his legacy
 
 # Subir Cambios
 -git add .
--git commit - "m"
+-git commit -m "m"
 -git push origin main
 
 # Recibir Cambios 
