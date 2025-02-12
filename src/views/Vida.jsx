@@ -5,6 +5,7 @@ import bano from "../../src/assets/bañoCaoma.png";
 import croquis from "../../src/assets/croquisGif.gif";
 import ejemplo1 from "../../src/assets/ejemplo1.webp";
 import ejemplo2 from "../../src/assets/ejemplo2.jpg";
+import bebeprueba from "../../src/assets/bebe-prueba.jpg";
 import { useTranslation } from "react-i18next";
 
 function Vida() {
@@ -13,8 +14,31 @@ function Vida() {
     const { t } = useTranslation(['vida']);
 
     const toggleExpand = (index) => {
-        setExpanded(expanded === index ? null : index);
+        const element = document.getElementById(`timeline-period-${index}`);
+    
+        if (expanded === index) {
+            // 🔹 Si estamos cerrando el período, solo aseguramos que se mantenga en la misma posición
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (!entry.isIntersecting) {
+                        element.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
+                    observer.disconnect();
+                },
+                { threshold: 0.5 }
+            );
+    
+            observer.observe(element);
+            setExpanded(null);
+        } else {
+            setExpanded(index);            
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100); 
+        }
     };
+    
+    
 
     const periods = [
         { 
@@ -22,19 +46,35 @@ function Vida() {
             subsections: [
                 {
                     subtitle: "1900",
-                    description: t("1900")
+                    description: t("1900"),
+                    images : [{src: bebeprueba, className: "bebeprueba"}]
                 },
                 {
                     subtitle: "1920-1928",
-                    description: t("1920-1928")
+                    description: t("1920-1928"),
+                    images: [
+                        { src: bano, className: "bano" },
+                        { src: croquis, className: "croquis" }
+                    ]
                 },
                 {
                     subtitle: "1927",
-                    description: t("1927")
+                    description: t("1927"),
+                    images: [
+                        { src: croquis, className: "croquis" },
+                        { src: bano, className: "bano" },
+                        { src: ejemplo1, className: "ejemplo1" }
+                    ]
                 },
                 {
                     subtitle: "1928",
-                    description: t("1928")
+                    description: t("1928"),
+                    images: [
+                        { src: croquis, className: "croquis" },
+                        { src: bano, className: "bano" },
+                        { src: ejemplo1, className: "ejemplo1" },
+                        { src: ejemplo2, className: "ejemplo2" }
+                    ]
                 }
             ]
         },
@@ -245,43 +285,60 @@ function Vida() {
     ];
 
     return (
-        <div>
+        <div className="vida-page">
             <div className="carousel-container">
                 <div className="carousel-slide">
                     <img src={bano} alt="First slide" />
                     <img src={croquis} alt="Second slide" />
                     <img src={vidaImg} alt="Third slide" />
                     <img src={ejemplo1} alt="Fourth slide" />
-                    <img src={ejemplo2} alt="Fith slide" />
+                    <img src={ejemplo2} alt="Fifth slide" />
                 </div>
             </div>
-        <div className="vida-container">
-            <header>
-                <h1>Carlos Raul Villanueva</h1>
-                <p>Londres - 1900.</p>
-                <p>Caracas - 1975.</p>
-            </header>
-            <div className="timeline">
-    {periods.map((item, index) => (
-        <div
-            key={index}
-            className={`timeline-period ${expanded === index ? 'expanded' : ''}`}
-            onClick={() => toggleExpand(index)}
-        >
-            <h2 className={expanded === index ? 'selected' : ''}>{item.period}</h2>
-            {expanded === index && item.subsections.map((subsection, subIndex) => (
-                <div key={subIndex} className="subsection">
-                    <h3>{subsection.subtitle}</h3>
-                    <p>{subsection.description}</p>
+            <div className="vida-container">
+                <header>
+                    <h1>Carlos Raul Villanueva</h1>
+                    <p>Londres - 1900.</p>
+                    <p>Caracas - 1975.</p>
+                </header>
+                <div className="timeline">
+                    {periods.map((item, index) => (
+                        <div 
+                        key={index} 
+                        id={`timeline-period-${index}`} 
+                        className={`timeline-period ${expanded === index ? 'expanded' : ''}`} 
+                        onClick={() => toggleExpand(index)}
+                    >
+                            <h2 className={expanded === index ? 'selected' : ''}>{item.period}</h2>
+                            {expanded === index && item.subsections.map((subsection, subIndex) => (
+                                <div key={subIndex} className="subsection">
+                                    <h3>{subsection.subtitle}</h3>
+                                    <p>{subsection.description}</p>
+                                    {subsection.images && (
+                                        <div className={`subsection-images ${subsection.images.length > 2 ? "multiple-images" : ""}`}>
+                                            {subsection.images.map((image, imgIndex) => (
+                                                <img 
+                                                    key={imgIndex} 
+                                                    src={image.src} 
+                                                    alt={`${subsection.subtitle} - image ${imgIndex + 1}`} 
+                                                    className={`subsection-img ${image.className}`} 
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
-    ))}
-</div>
-
-        </div>
+            </div>
         </div>
     );
+    
 }
 
 export default Vida;
+
+
+
+
